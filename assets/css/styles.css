@@ -28,3 +28,64 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@keyframes animate {
+  0% {
+    transform-origin: bottom right;
+    transform: translate(-50%, -50%) rotate(0deg) translateX(25px);
+  }
+
+  50% {
+    transform-origin: bottom right;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  100% {
+    transform-origin: bottom right;
+    transform: translate(-50%, -50%) rotate(90deg) translateY(50px);
+  }
+}
+
+.square {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 25px);
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: var(--jazz1);
+  border: 4px solid var(--jazz2);
+  animation: animate 1s linear infinite;
+}
+
+.track {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 6px);
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 50px;
+  border-bottom: 2px solid var(--jazz3);
+}
+
+.track:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: 4px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--jazz3);
+}
+
+.track span {
+  position: absolute;
+  top: -22px;
+  right: 4px;
+  width: 50px;
+  background: var(--jazz3);
+  color: var(--jazz1);
+  padding: 4px 6px;
+  font-size: 12px;
+
+}
